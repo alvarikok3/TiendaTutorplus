@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{plantilla :: head}"></head>
+<body>
+  <header th:replace="~{plantilla :: header}"></header>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4" th:text="${titulo}">Galería de Tutores</h2>
+    <div class="row g-4">
+
+      <!-- Tutor 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img th:src="@{'https://th.bing.com/th/id/R.c44d1cd01cba67c3ec9958890dda4304?rik=TW%2fJ42MaxTMOEw&pid=ImgRaw&r=0'}"
+               alt="Tutor 1: Docente explicando lección"
+               class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">María González</h5>
+            <p class="card-text text-center">Matemáticas</p>
+            <p class="card-text text-muted text-center small">
+              Especialista en álgebra y cálculo, con 10 años de experiencia ayudando a estudiantes a dominar conceptos complejos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutor 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img th:src="@{'https://t3.ftcdn.net/jpg/06/25/94/42/360_F_625944202_C2JkERrgdZHO9V04RrUuvKDpUYLQBINf.jpg'}"
+               alt="Tutor 2: Profesor interactuando con alumno"
+               class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">Carlos Pérez</h5>
+            <p class="card-text text-center">Física</p>
+            <p class="card-text text-muted text-center small">
+              Físico graduado, apasionado por explicar temas complejos con ejemplos prácticos y experimentos en clase.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutor 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img th:src="@{'https://www.personalwirtschaft.de/wp-content/uploads/2023/03/Lehrerin-1.jpg'}"
+               alt="Tutor 3: Profesora enseñando"
+               class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">Laura Ramírez</h5>
+            <p class="card-text text-center">Inglés</p>
+            <p class="card-text text-muted text-center small">
+              Profesora certificada TEFL, enfocada en conversación y gramática avanzada para todos los niveles.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutor 4 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img th:src="@{'https://www.unidprofessional.com/wp-content/uploads/2024/04/prove-concorsi-docenti.jpg'}"
+               alt="Tutor 4: Clase grupal en aula"
+               class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">Andrés Mora</h5>
+            <p class="card-text text-center">Programación</p>
+            <p class="card-text text-muted text-center small">
+              Desarrollador senior de software y mentor en tecnologías backend y frontend con proyectos reales.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutor 5 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img th:src="@{'https://t4.ftcdn.net/jpg/08/13/02/17/360_F_813021769_wY6dmp7N91IE1paDeC2yROqg7bdLpMdB.jpg'}"
+               alt="Tutor 5: Tutor digital con laptop"
+               class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">María Fernández</h5>
+            <p class="card-text text-center">Química</p>
+            <p class="card-text text-muted text-center small">
+              Química experimental con experiencia en laboratorio y preparación para exámenes de alto nivel.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutor 6 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img th:src="@{'https://img.freepik.com/fotos-premium/profesor-anciano-pizarra-blanco-clase-ensenanza-lecciones-universidad_265223-78478.jpg'}"
+               alt="Tutor 6: Profesor experimentado"
+               class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">José Herrera</h5>
+            <p class="card-text text-center">Historia</p>
+            <p class="card-text text-muted text-center small">
+              Con más de 20 años impartiendo conocimiento histórico en instituciones universitarias de prestigio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer th:replace="~{plantilla :: footer}"></footer>
+</body>
+</html>

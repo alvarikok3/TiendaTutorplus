@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{plantilla :: head}"></head>
+<body>
+  <header th:replace="~{plantilla :: header}"></header>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4" th:text="${titulo}">Preguntas Frecuentes</h2>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>¿Cómo me registro?</strong> Haz clic en "Registrar" en la barra superior y completa el formulario.</li>
+      <li class="list-group-item"><strong>¿Cómo encuentro un tutor?</strong> Ve a "Buscar tutor" y filtra por materia, nivel y ubicación.</li>
+      <li class="list-group-item"><strong>¿Qué métodos de pago aceptan?</strong> Aceptamos tarjetas de crédito y transferencias bancarias.</li>
+      <li class="list-group-item"><strong>¿Cómo reprogramo o cancelo una sesión?</strong> Ingresa a tu perfil, ve a "Mis sesiones" y selecciona la opción de reprogramar o cancelar junto a la sesión correspondiente.</li>
+      <li class="list-group-item"><strong>¿Cómo dejo una valoración o comentario para mi tutor?</strong> Al finalizar la sesión, recibirás un enlace para calificar y comentar tu experiencia con el tutor.</li>
+      <li class="list-group-item"><strong>¿Qué sucede si no estoy satisfecho con mi tutor?</strong> Puedes solicitar un cambio de tutor sin costo adicional dentro de las primeras dos sesiones.</li>
+      <li class="list-group-item"><strong>¿Cómo protegen mis datos personales?</strong> Utilizamos protocolos de seguridad SSL y cumplimos con la normativa de privacidad para mantener tu información protegida.</li>
+      <li class="list-group-item"><strong>¿Qué niveles académicos ofrecen?</strong> Cubrimos desde primaria y secundaria hasta nivel universitario en más de 25 disciplinas.</li>
+      <li class="list-group-item"><strong>¿Cómo contacto al soporte técnico?</strong> Envía un correo a <em>soporte@tutorplus.com</em> o utiliza el chat en línea disponible en la parte inferior de la página.</li>
+      <li class="list-group-item"><strong>¿Puedo cambiar de tutor después de iniciar un paquete?</strong> Sí, puedes solicitar un cambio sin costo si no estás satisfecho dentro de las primeras dos horas contratadas.</li>
+      <li class="list-group-item"><strong>¿Existen descuentos por paquetes de horas?</strong> Ofrecemos tarifas especiales al contratar más de 10 horas de tutoría al mes.</li>
+      <li class="list-group-item"><strong>¿Qué ocurre si mi tutor no puede asistir?</strong> Programaremos automáticamente otra sesión o te asignaremos un tutor de reemplazo sin afectar tu paquete contratado.</li>
+      <li class="list-group-item"><strong>¿Cómo obtengo factura de mis pagos?</strong> Puedes descargar tu factura desde la sección “Facturación” en tu perfil después de realizar cada pago.</li>
+    </ul>
+  </div>
+
+  <footer th:replace="~{plantilla :: footer}"></footer>
+</body>
+</html>

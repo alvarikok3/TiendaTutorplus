@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Nosotros</title>
-</head>
-<body>
-    <h2>Acerca de TiendaTutorplus</h2>
-</body>
+    <head th:replace="~{plantilla :: head}"></head>
+    <body>
+        <header th:replace="~{plantilla :: header}"></header>
+
+        <div class="container my-5">
+            <h2 class="text-center mb-4" th:text="${titulo}">Acerca de Tutor+</h2>
+
+            <div class="row align-items-center mb-5">
+                <!-- Imagen representativa profesional -->
+                <div class="col-md-6">
+                    <img th:src="@{'https://0201.nccdn.net/1_2/000/000/0a3/166/quienes-somos.png'}"
+                         alt="Quiénes Somos" 
+                         class="img-fluid rounded shadow-sm">
+                </div>
+                <!-- Texto mejorado -->
+                <div class="col-md-6">
+                    <p>En TutorPlus, reconocemos el potencial único de cada estudiante. Desde nuestra fundación en 2019, nos dedicamos a transformar el proceso educativo, conectando a estudiantes con tutores certificados y apasionados por la enseñanza.</p>
+                    <p><strong>Misión:</strong> Ofrecer experiencias de tutorías personalizadas de excelencia, diseñadas según las necesidades y estilo de aprendizaje de cada usuario, garantizando seguimiento constante y resultados medibles.</p>
+                    <p><strong>Visión:</strong> Ser la plataforma de referencia en educación complementaria a nivel nacional, impulsando el empoderamiento académico y profesional de nuestra comunidad.</p>
+                    <p><strong>Valores:</strong> Integridad, innovación pedagógica, empatía, compromiso y mejora continua.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <p>Hasta la fecha, TutorPlus ha registrado más de <strong>12 500 horas</strong> de tutorías en <strong>25 disciplinas</strong>, impactando positivamente el desempeño académico de más de <strong>1 200 estudiantes</strong>. Seguimos evolucionando, incorporando tecnología de vanguardia y nuevas metodologías para ofrecer siempre un servicio de la más alta calidad.</p>
+        </div>
+
+        <footer th:replace="~{plantilla :: footer}"></footer>
+    </body>
 </html>
