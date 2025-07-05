@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="~{plantilla :: head}"></head>
+    <body>
+        <header th:replace="~{plantilla :: header}"></header>
+
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">Registro de Tutor</h2>
+
+            <form th:action="@{/registro}" method="post" th:object="${tutor}">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" th:field="*{nombre}" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+                    <div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="apellido1" class="form-label">Primer Apellido:</label>
+                    <input type="text" th:field="*{apellido1}" class="form-control" id="apellido1" placeholder="Ingrese su primer apellido">
+                    <div class="text-danger" th:if="${#fields.hasErrors('apellido1')}" th:errors="*{apellido1}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="apellido2" class="form-label">Segundo Apellido:</label>
+                    <input type="text" th:field="*{apellido2}" class="form-control" id="apellido2" placeholder="Ingrese su segundo apellido">
+                    <div class="text-danger" th:if="${#fields.hasErrors('apellido2')}" th:errors="*{apellido2}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo Electrónico:</label>
+                    <input type="email" th:field="*{correo}" class="form-control" id="correo" placeholder="ejemplo@correo.com">
+                    <div class="text-danger" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="especialidad" class="form-label">Especialidad:</label>
+                    <input type="text" th:field="*{especialidad}" class="form-control" id="especialidad" placeholder="Ej: Matemáticas">
+                    <div class="text-danger" th:if="${#fields.hasErrors('especialidad')}" th:errors="*{especialidad}"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+
+            <div class="alert alert-success mt-3" th:if="${mensaje != null}" th:text="${mensaje}"></div>
+        </div>
+
+        <footer th:replace="~{plantilla :: footer}"></footer>
+    </body>
+</html>

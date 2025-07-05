@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="~{plantilla :: head}"></head>
+    <body>
+        <header th:replace="~{plantilla :: header}"></header>
+
+        <main class="container my-5">
+            <div class="contacto-section">
+                <h2 class="text-center mb-4">Contáctanos</h2>
+
+                <div class="row">
+                    <!-- Información de contacto -->
+                    <div class="col-md-6 mb-4 contacto-info">
+                        <h4>Información de contacto</h4>
+                        <div class="dato"><i class="fas fa-phone"></i> +506 8888 8888</div>
+                        <div class="dato"><i class="fas fa-envelope"></i> contacto@tutorplus.com</div>
+                        <div class="dato"><i class="fas fa-map-marker-alt"></i> Costa Rica, San José, Desamparados</div>
+
+                        <h5 class="mt-4">Ubicación</h5>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13220.555089695525!2d-84.0570726094572!3d9.892704943668106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1751676363331!5m2!1ses!2scr" 
+                                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Imagen y descripción -->
+                    <div class="col-md-6 text-center">
+                        <img th:src="@{/imagenes/logo.png}" alt="TutorPlus" class="img-fluid mb-3" style="max-height: 250px;">
+                        <p class="mt-3">Estamos aquí para ayudarte. 
+                            <br>Comunícate con nuestro personal para resolver todas tus dudas y 
+                            <br>síguenos en nuestras redes sociales para ver cómo funcionan 
+                            <br>las tutorías personalizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="~{plantilla :: footer}"></footer>
+    </body>
+</html>
