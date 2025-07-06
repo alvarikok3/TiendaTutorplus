@@ -20,7 +20,7 @@ public class FormularioController {
     public String verContacto() {
         return "contacto";
     }
-    
+
     @GetMapping("/testimonios")
     public String verTestimonos() {
         return "testimonios";
@@ -30,6 +30,11 @@ public class FormularioController {
     public String mostrarFormularioRegistro(Model model) {
         model.addAttribute("tutor", new Tutor());
         return "registro";
+    }
+
+    @GetMapping("/ayuda")
+    public String mostrarAyuda() {
+        return "ayuda";
     }
 
     @PostMapping("/registro")
