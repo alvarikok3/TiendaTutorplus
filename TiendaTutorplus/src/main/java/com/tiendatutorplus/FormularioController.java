@@ -36,6 +36,11 @@ public class FormularioController {
         return "registro";
     }
 
+    @GetMapping("/ayuda")
+    public String mostrarAyuda() {
+        return "ayuda";
+    }
+
     @PostMapping("/registro")
     public String registrarUsuario(
             @RequestParam("nombre") String nombre,
