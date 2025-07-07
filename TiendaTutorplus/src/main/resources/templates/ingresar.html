@@ -5,34 +5,15 @@
         <header th:replace="~{plantilla :: header}"></header>
 
         <main class="container my-5">
-            <h2 class="text-center mb-4">Registro de Usuario</h2>
+            <h2 class="text-center mb-4">Inicio de Sesión</h2>
 
+            
             <div class="bg-primary bg-opacity-10 p-5 rounded shadow" style="max-width: 500px; margin: auto;">
 
-                <form th:action="@{/registro}" method="post" class="w-50 mx-auto" style="max-width: 600px;">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="apellido1" class="form-label">Primer Apellido:</label>
-                        <input type="text" id="apellido1" name="apellido1" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="apellido2" class="form-label">Segundo Apellido:</label>
-                        <input type="text" id="apellido2" name="apellido2" class="form-control" required>
-                    </div>
-
+                <form th:action="@{/ingresar}" method="post">
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo:</label>
                         <input type="email" id="correo" name="correo" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="especialidad" class="form-label">Especialidad (solo para profesores):</label>
-                        <input type="text" id="especialidad" name="especialidad" class="form-control">
                     </div>
 
                     <div class="mb-3">
@@ -50,15 +31,16 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                        <button type="submit" class="btn btn-dark px-4">Ingresar</button>
                     </div>
                 </form>
 
                 <div class="text-center mt-3">
-                    <p th:text="${mensaje}" class="text-success fw-bold"></p>
+                    <p th:text="${mensaje}" class="text-danger fw-bold"></p>
                 </div>
 
             </div>
+
         </main>
 
         <footer th:replace="~{plantilla :: footer}"></footer>

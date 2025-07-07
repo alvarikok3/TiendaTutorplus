@@ -63,8 +63,13 @@ h1, h2 {
     color: #333;
 }
 
-/*estilos para registro*/
-
+/*estilos para registro e ingresar*/
+.fondo-azul {
+    background-color: #e0f0ff;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 60px;
+}
 
 /*estilos para contacto*/
 .contacto-section {

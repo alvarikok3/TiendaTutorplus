@@ -1,12 +1,9 @@
 package com.tiendatutorplus.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Tutor {
+public class Estudiante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +13,6 @@ public class Tutor {
     private String apellido1;
     private String apellido2;
     private String correo;
-    private String especialidad;
     private String contrasena;
 
     // Getters y Setters
@@ -58,14 +54,6 @@ public class Tutor {
 
     public void setCorreo(String correo) {
         this.correo = correo;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
     }
 
     public String getContrasena() {
