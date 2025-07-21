@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{plantilla :: head}"></head>
+<body>
+
+<!-- Encabezado compartido -->
+<header th:replace="~{plantilla :: header}"></header>
+
+<!-- Sección principal -->
+<section class="container py-5">
+    <div class="text-center">
+        <h1>Recomendaciones</h1>
+        <p class="lead">Aquí encontrarás consejos útiles para aprovechar al máximo tus sesiones con tutores.</p>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h4>Para estudiantes:</h4>
+            <ul>
+                <li>Prepara tus preguntas antes de cada sesión.</li>
+                <li>Busca un ambiente tranquilo para estudiar.</li>
+                <li>Utiliza cuadernos o apps para tomar apuntes.</li>
+                <li>Pide ejemplos prácticos si no entiendes un tema.</li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Para tutores:</h4>
+            <ul>
+                <li>Adapta tu método al nivel del estudiante.</li>
+                <li>Utiliza ejemplos cotidianos o visuales.</li>
+                <li>Fomenta la participación activa.</li>
+                <li>Haz pausas y valida que el estudiante entienda.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Pie de página compartido -->
+<footer th:replace="~{plantilla :: footer}"></footer>
+
+</body>
+</html>
