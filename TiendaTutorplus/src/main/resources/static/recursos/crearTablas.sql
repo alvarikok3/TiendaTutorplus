@@ -29,6 +29,16 @@ CREATE TABLE estudiante (
     contrasena VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE administradores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido1 VARCHAR(50) NOT NULL,
+    apellido2 VARCHAR(50) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    especialidad VARCHAR(100) NOT NULL,
+    contrasena VARCHAR(50)
+);
+
 INSERT INTO tutor (nombre, apellido1, apellido2, correo, especialidad, contrasena)
 VALUES 
 ('José', 'Heerera', 'Jiménez', 'jose.herrera@tutorplus.co.cr', 'Historia', 'JoseH@87945'),
@@ -44,7 +54,42 @@ VALUES
 ('Pedro', 'Jiménez', 'Salas', 'pedro.jimenez@tutorplus.co.cr', 'PedroJ@35498'),
 ('María', 'Lopez', 'Ramírez', 'maria.lopez@tutorplus.co.cr', 'MariaL$64879');
 
+INSERT INTO administradores (nombre, apellido1, apellido2, correo, especialidad, contrasena)
+VALUES 
+('Andy', 'Rodríguez', 'Rodríguez', 'admin@tutorplus.co.cr', 'Administrador', 'Admin*AN123'),
+('Bernal', 'Herrera', 'Arias', 'adminbernal@tutorplus.co.cr', 'Administrador', 'Admin*BE456'),
+('Alvaro', 'Monge', 'Guzman', 'adminalvaro@tutorplus.co.cr', 'Administrador', 'Admin*AL789');
+
+CREATE TABLE roles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL UNIQUE
+);
+
+INSERT INTO roles (nombre) VALUES 
+('ROLE_TUTOR'), 
+('ROLE_ESTUDIANTE'), 
+('ROLE_ADMIN');
+
+CREATE TABLE usuario_rol (
+    correo VARCHAR(100) NOT NULL,
+    rol_id INT NOT NULL,
+    FOREIGN KEY (rol_id) REFERENCES roles(id),
+    PRIMARY KEY (correo, rol_id)
+);
+
+-- Asignar rol a los TUTORES
+INSERT INTO usuario_rol (correo, rol_id)
+SELECT correo, (SELECT id FROM roles WHERE nombre = 'ROLE_TUTOR') FROM tutor;
+
+-- Asignar rol a los ESTUDIANTES
+INSERT INTO usuario_rol (correo, rol_id)
+SELECT correo, (SELECT id FROM roles WHERE nombre = 'ROLE_ESTUDIANTE') FROM estudiante;
+
+-- Asignar rol a los ADMINISTRADORES
+INSERT INTO usuario_rol (correo, rol_id)
+SELECT correo, (SELECT id FROM roles WHERE nombre = 'ROLE_ADMIN') FROM administradores;
 
 USE tutorplus;
 SELECT * FROM tutor;
 SELECT * FROM estudiante;
+SELECT * FROM administradores;
