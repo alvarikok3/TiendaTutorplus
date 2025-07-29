@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tutores Destacados</title>
+</head>
+<body>
+    <h1>Tutores Destacados</h1>
+    <div th:each="tutor : ${tutores}">
+        <img th:src="@{/static.imagenes/__${tutor.foto}__}" alt="Foto del tutor" width="100">
+        <h3 th:text="${tutor.nombre}"></h3>
+        <p th:text="'Calificación: ' + ${tutor.calificacion} + '/5'"></p>
+    </div>
+</body>
+</html>

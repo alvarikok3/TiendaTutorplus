@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla :: head"></head>
+<body>
+
+<header th:replace="plantilla :: header"></header>
+
+<div class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Buscar Tutor</h2>
+
+    <div class="text-center mb-4">
+        <input type="text" class="form-control d-inline-block w-auto me-2" placeholder="¿Qué desea aprender?" style="max-width: 300px;">
+    </div>
+
+    <div class="text-center mb-4">
+        <button class="btn btn-outline-primary rounded-pill mx-1">Computación</button>
+        <button class="btn btn-outline-primary rounded-pill mx-1">Matemáticas</button>
+        <button class="btn btn-outline-primary rounded-pill mx-1">Inglés</button>
+        <button class="btn btn-outline-primary rounded-pill mx-1">Estudios Sociales</button>
+        <button class="btn btn-outline-primary rounded-pill mx-1">Ciencias</button>
+    </div>
+
+    <div class="row justify-content-center g-4">
+        <!-- Tutor 1 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR1.jpg}" class="card-img-top rounded" alt="Tutor 1">
+                <div class="card-body">
+                    <h5 class="card-title">Marian Aguilar</h5>
+                    <p class="card-text">Especialidad: Matemáticas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutor 2 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR2.jpg}" class="card-img-top rounded" alt="Tutor 2">
+                <div class="card-body">
+                    <h5 class="card-title">Luis Zamora</h5>
+                    <p class="card-text">Especialidad: Inglés</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutor 3 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR3.jpg}" class="card-img-top rounded" alt="Tutor 3">
+                <div class="card-body">
+                    <h5 class="card-title">Tomás Rojas</h5>
+                    <p class="card-text">Especialidad: Ciencias</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutor 4 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR4.jpg}" class="card-img-top rounded" alt="Tutor 4">
+                <div class="card-body">
+                    <h5 class="card-title">David Salazar</h5>
+                    <p class="card-text">Especialidad: Computación</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutor 5 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR5.jpg}" class="card-img-top rounded" alt="Tutor 5">
+                <div class="card-body">
+                    <h5 class="card-title">Mario Vargas</h5>
+                    <p class="card-text">Especialidad: Español</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutor 6 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR6.jpg}" class="card-img-top rounded" alt="Tutor 6">
+                <div class="card-body">
+                    <h5 class="card-title">Karla Méndez</h5>
+                    <p class="card-text">Especialidad: Artes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutor 7 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR7.jpg}" class="card-img-top rounded" alt="Tutor 7">
+                <div class="card-body">
+                    <h5 class="card-title">Javier Mora</h5>
+                    <p class="card-text">Especialidad: Estadística</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutor 8 -->
+        <div class="col-md-4 col-lg-3 text-center">
+            <div class="card border-0">
+                <img th:src="@{/imagenes/TUTOR8.jpg}" class="card-img-top rounded" alt="Tutor 8">
+                <div class="card-body">
+                    <h5 class="card-title">Andrea Fernández</h5>
+                    <p class="card-text">Especialidad: Estudios Sociales</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 p-4 rounded bg-light border text-center">
+        <blockquote class="blockquote mb-0">
+            <p class="fst-italic text-primary fs-5">
+                "En Tutor+ creemos en el poder de una buena guía. Por eso, cada uno de nuestros tutores ha sido seleccionado por su pasión, experiencia y compromiso con tu éxito. ¡Con Tutor+, tu futuro académico está en buenas manos!"
+            </p>
+        </blockquote>
+    </div>
+</div>
+
+<footer th:replace="plantilla :: footer"></footer>
+
+</body>
+</html>

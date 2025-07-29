@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Planes y Costos</title>
+</head>
+<body>
+    <h1>Planes y Costos</h1>
+    <div th:each="plan : ${planes}">
+        <h2 th:text="${plan.nombre}"></h2>
+        <p th:text="${plan.descripcion}"></p>
+        <strong th:text="'₡' + ${plan.precio} + ' por mes'"></strong>
+    </div>
+</body>
+</html>
