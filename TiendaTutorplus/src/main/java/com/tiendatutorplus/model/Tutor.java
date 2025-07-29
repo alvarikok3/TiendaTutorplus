@@ -19,6 +19,20 @@ public class Tutor {
     private String especialidad;
     private String contrasena;
 
+    // ✅ Campo extra para mostrar en destacados (opcional)
+    private double calificacion;
+
+    // 🔸 Constructor vacío (obligatorio para JPA)
+    public Tutor() {
+    }
+
+    // 🔸 Constructor para usar en TutoresDestacadosController
+    public Tutor(String nombre, String especialidad, double calificacion) {
+        this.nombre = nombre;
+        this.especialidad = especialidad;
+        this.calificacion = calificacion;
+    }
+
     // Getters y Setters
     public int getId() {
         return id;
@@ -74,5 +88,13 @@ public class Tutor {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(double calificacion) {
+        this.calificacion = calificacion;
     }
 }
