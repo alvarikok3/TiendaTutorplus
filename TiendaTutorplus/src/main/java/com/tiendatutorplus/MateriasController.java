@@ -1,5 +1,6 @@
 package com.tiendatutorplus;
 
+import com.tiendatutorplus.model.Materia;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,14 @@ public class MateriasController {
 
     @GetMapping("/materias")
     public String verMaterias(Model model) {
-        List<String> materias = Arrays.asList("Matemáticas", "Inglés", "Ciencias", "Español");
+        List<Materia> materias = Arrays.asList(
+                new Materia("Matemáticas", "Matematicas.jpg"),
+                new Materia("Inglés", "Ingles.jpg"),
+                new Materia("Ciencias", "Ciencias.jpg"),
+                new Materia("Computación", "Computacion.jpg"),
+                new Materia("Estudios Sociales", "Estudios Sociales.jpg")
+        );
+
         model.addAttribute("materias", materias);
         return "materias";
     }
