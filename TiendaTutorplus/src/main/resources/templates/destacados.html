@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="plantilla :: head">
+
 <head>
     <title>Tutores Destacados</title>
 </head>
+
 <body>
-    <h1>Tutores Destacados</h1>
-    <div th:each="tutor : ${tutores}">
-        <img th:src="@{/static.imagenes/__${tutor.foto}__}" alt="Foto del tutor" width="100">
-        <h3 th:text="${tutor.nombre}"></h3>
-        <p th:text="'Calificación: ' + ${tutor.calificacion} + '/5'"></p>
+<div th:replace="plantilla :: header"></div>
+
+<div class="container text-center my-5">
+    <img th:src="@{/imagenes/logo.png}" alt="Logo Tutor+" style="height: 80px;">
+    <h1 class="mt-4 text-primary">Tutores Destacados</h1>
+
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-4">
+            <img th:src="@{/imagenes/TUTOR1.jpg}" class="img-fluid rounded shadow-sm" alt="Tutor 1">
+        </div>
+        <div class="col-md-4">
+            <img th:src="@{/imagenes/TUTOR2.jpg}" class="img-fluid rounded shadow-sm" alt="Tutor 2">
+        </div>
+        <div class="col-md-4">
+            <img th:src="@{/imagenes/TUTOR3.jpg}" class="img-fluid rounded shadow-sm" alt="Tutor 3">
+        </div>
     </div>
+
+    <div class="mt-5 px-3 py-3 bg-light rounded border border-primary">
+        <p class="lead">
+            “¡Superá tus límites con Tutor+! Accedé a tutores expertos, clases personalizadas y una experiencia diseñada para que aprendas más, mejor y a tu ritmo. Donde otros ven dificultades, nosotros vemos oportunidades.”
+        </p>
+    </div>
+</div>
+
+<div th:replace="plantilla :: footer"></div>
 </body>
 </html>
