@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Planes y Costos</title>
-</head>
-<body>
-    <h1>Planes y Costos</h1>
-    <div th:each="plan : ${planes}">
-        <h2 th:text="${plan.nombre}"></h2>
-        <p th:text="${plan.descripcion}"></p>
-        <strong th:text="'₡' + ${plan.precio} + ' por mes'"></strong>
-    </div>
-</body>
+    <head th:replace="~{plantilla :: head}"></head>
+    <body>
+        <header th:replace="~{plantilla :: header}"></header>
+
+        <!-- Sección Planes -->
+        <section th:fragment="planesSection" id="planes" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center text-primary mb-5">Planes de Tutor+</h2>
+                <div class="row">
+
+                    <!-- Plan Básico -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm rounded-3">
+                            <div class="card-header text-center bg-primary text-white rounded-top-3">
+                                <strong>Plan Básico</strong>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-center">₡10,000<span class="small">/mes</span></h3>
+                                <ul class="flex-grow-1">
+                                    <li>2 sesiones por semana</li>
+                                    <li>1 tutor asignado</li>
+                                    <li>Soporte por correo</li>
+                                    <li>Acceso al grupo de estudio en línea</li>
+                                    <li>Informe de progreso mensual</li>
+                                </ul>
+                                <div class="mt-auto text-center">
+                                    <a th:href="@{/planes/basico}" class="btn btn-primary w-100">Contratar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plan Experto -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm rounded-3">
+                            <div class="card-header text-center bg-primary text-white rounded-top-3">
+                                <strong>Plan Experto</strong>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-center">₡20,000<span class="small">/mes</span></h3>
+                                <ul class="flex-grow-1">
+                                    <li>5 sesiones por semana</li>
+                                    <li>Hasta 3 tutores</li>
+                                    <li>Soporte por chat</li>
+                                    <li>Materiales descargables y guías de estudio</li>
+                                    <li>Webinars mensuales con expertos</li>
+                                    <li>Evaluaciones trimestrales de avance</li>
+                                </ul>
+                                <div class="mt-auto text-center">
+                                    <a th:href="@{/planes/expert}" class="btn btn-primary w-100">Contratar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plan Premium -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm rounded-3">
+                            <div class="card-header text-center bg-primary text-white rounded-top-3">
+                                <strong>Plan Premium</strong>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-center">₡35,000<span class="small">/mes</span></h3>
+                                <ul class="flex-grow-1">
+                                    <li>Sesiones ilimitadas</li>
+                                    <li>Tutor dedicado</li>
+                                    <li>Soporte 24/7 (chat y llamada)</li>
+                                    <li>Acceso a todos los recursos premium</li>
+                                    <li>Mentoría personalizada de carrera</li>
+                                    <li>Certificado oficial de finalización</li>
+                                    <li>Prioridad absoluta en solicitudes y agenda</li>
+                                </ul>
+                                <div class="mt-auto text-center">
+                                    <a th:href="@{/planes/premium}" class="btn btn-primary w-100">Contratar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="text-center text-muted mt-4 fst-italic">
+                    “Aprende a tu ritmo y alcanza tus metas con Tutor+”
+                </p>
+            </div>
+        </section>
+
+
+        <footer th:replace="~{plantilla :: footer}"></footer>
+        <script th:src="@{/js/main.js}"></script>
+    </body>
 </html>
