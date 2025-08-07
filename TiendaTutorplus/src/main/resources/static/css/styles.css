@@ -93,3 +93,111 @@ h1, h2 {
     font-size: 1.3rem;
 }
 
+.tutor-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.tutor-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Estilo para tarjetas de tutores */
+.tutor-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.tutor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tutor-card img {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.tutor-card .card-body {
+    padding: 1rem;
+}
+
+.tutor-card .badge {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    margin-bottom: 6px;
+}
+
+
+/* Tarjeta animada al hacer hover */
+.tutor-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del modal centrado */
+#modalRuleta .modal-content {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Canvas centrado */
+#canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botón de girar */
+#girarBtn, #spin {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 25px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#girarBtn:hover, #spin:hover {
+    background-color: #084298;
+}
+
+/* Texto del resultado */
+#textoRuleta {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #198754; /* verde */
+}
+
+/* Ruleta en pantallas pequeñas */
+@media (max-width: 500px) {
+    #canvas {
+        width: 250px !important;
+        height: 250px !important;
+    }
+}
+

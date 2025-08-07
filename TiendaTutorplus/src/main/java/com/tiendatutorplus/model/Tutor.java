@@ -19,18 +19,24 @@ public class Tutor {
     private String especialidad;
     private String contrasena;
 
-    // ✅ Campo extra para mostrar en destacados (opcional)
+    // Campos extras para mostrar en destacados
     private double calificacion;
+    private String imagen;
+    private String descripcion;
+    private String modalidad; // Virtual o Presencial
+    private String nivel;     // Secundaria, Universidad, etc.
 
-    // 🔸 Constructor vacío (obligatorio para JPA)
+    // Constructor vacío obligatorio para JPA
     public Tutor() {
     }
 
-    // 🔸 Constructor para usar en TutoresDestacadosController
-    public Tutor(String nombre, String especialidad, double calificacion) {
+    // Constructor para controladores de prueba
+    public Tutor(String nombre, String especialidad, double calificacion, String imagen, String descripcion) {
         this.nombre = nombre;
         this.especialidad = especialidad;
         this.calificacion = calificacion;
+        this.imagen = imagen;
+        this.descripcion = descripcion;
     }
 
     // Getters y Setters
@@ -96,5 +102,37 @@ public class Tutor {
 
     public void setCalificacion(double calificacion) {
         this.calificacion = calificacion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getModalidad() {
+        return modalidad;
+    }
+
+    public void setModalidad(String modalidad) {
+        this.modalidad = modalidad;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 }
