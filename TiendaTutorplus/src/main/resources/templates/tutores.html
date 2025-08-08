@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantilla :: head"></head>
+    <body>
+        <header th:replace="plantilla :: header"></header>
+
+        <!-- Introductorio -->
+        <section class="container mt-5 text-center bg-light p-4 rounded shadow-sm">
+            <h2 class="fw-bold">Tutores Destacados</h2>
+            <p class="text-muted mb-0">
+                Conoce a nuestros tutores con mejores calificaciones y mayor experiencia.
+                Puedes filtrar por materia, nivel o modalidad para encontrar el tutor ideal para ti.
+            </p>
+        </section>
+
+        <!-- Filtros -->
+        <div class="container mb-4 mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <label for="filtroMateria" class="form-label">Materia</label>
+                    <select id="filtroMateria" class="form-select">
+                        <option value="todos">Todas</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="Inglés">Inglés</option>
+                        <option value="Física">Física</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="filtroNivel" class="form-label">Nivel educativo</label>
+                    <select id="filtroNivel" class="form-select">
+                        <option value="todos">Todos</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Universidad">Universidad</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="filtroModalidad" class="form-label">Modalidad</label>
+                    <select id="filtroModalidad" class="form-select">
+                        <option value="todos">Todas</option>
+                        <option value="Virtual">Virtual</option>
+                        <option value="Presencial">Presencial</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjetas de tutores -->
+        <div class="container">
+            <div class="row" id="tutores-container">
+                <div class="col-md-4 mb-4 tutor-card"
+                     th:each="tutor : ${tutores}"
+                     th:attr="data-materia=${tutor.materia}, data-nivel=${tutor.nivel}, data-modalidad=${tutor.modalidad}">
+                    <div class="card h-100 shadow-lg">
+                        <img th:src="@{/imagenes/{img}(img=${tutor.imagen})}" class="card-img-top" alt="Foto del tutor">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${tutor.nombre}">Nombre del Tutor</h5>
+                            <p class="card-text" th:text="${tutor.descripcion}">Descripción breve</p>
+
+                            <!-- Badges -->
+                            <div class="mb-2">
+                                <span class="badge bg-success" th:if="${tutor.verificado}">✔ Verificado</span>
+                                <span class="badge bg-warning text-dark" th:if="${tutor.clases > 100}">🔥 +100 clases</span>
+                                <span class="badge bg-primary" th:if="${tutor.calificacion >= 4.8}">⭐ Top</span>
+                            </div>
+
+                            <span class="badge bg-info" th:text="${tutor.materiaPrincipal}">Materia</span>
+                        </div>
+                        <div class="card-footer text-center d-flex justify-content-center gap-2">
+                            <a th:href="@{/tutor/perfil/{id}(id=${tutor.id})}" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-user"></i> Ver perfil
+                            </a>
+                            <a th:href="@{/contactar/{id}(id=${tutor.id})}" class="btn btn-primary btn-sm">
+                                <i class="fas fa-envelope"></i> Contactar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="plantilla :: footer"></footer>
+
+        <!-- Filtro dinámico -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const filtroMateria = document.getElementById("filtroMateria");
+            const filtroNivel = document.getElementById("filtroNivel");
+            const filtroModalidad = document.getElementById("filtroModalidad");
+            const tarjetas = document.querySelectorAll(".tutor-card");
+
+            function aplicarFiltros() {
+            const materia = filtroMateria.value;
+            const nivel = filtroNivel.value;
+            const modalidad = filtroModalidad.value;
+
+            tarjetas.forEach(tarjeta => {
+            const mat = tarjeta.getAttribute("data-materia");
+            const niv = tarjeta.getAttribute("data-nivel");
+            const mod = tarjeta.getAttribute("data-modalidad");
+
+            const cumpleMateria = (materia === "todos" || mat === materia);
+            const cumpleNivel = (nivel === "todos" || niv === nivel);
+            const cumpleModalidad = (modalidad === "todos" || mod === modalidad);
+
+            tarjeta.parentElement.style.display = (cumpleMateria && cumpleNivel && cumpleModalidad) ? "block" : "none";
+            });
+            }
+
+            filtroMateria.addEventListener("change", aplicarFiltros);
+            filtroNivel.addEventListener("change", aplicarFiltros);
+            filtroModalidad.addEventListener("change", aplicarFiltros);
+            });
+        </script>
+
+    </body>
+</html>
