@@ -3,8 +3,8 @@ package com.tiendatutorplus.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "estudiante")
-public class Estudiante {
+@Table(name = "administradores")
+public class Administrador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,14 +13,10 @@ public class Estudiante {
     private String nombre;
     private String apellido1;
     private String apellido2;
-
-    
     private String correo;
-
-    
+    private String especialidad;
     private String contrasena;
 
-    
     public Integer getId() {
         return id;
     }
@@ -61,6 +57,14 @@ public class Estudiante {
         this.correo = correo;
     }
 
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
     public String getContrasena() {
         return contrasena;
     }
@@ -68,4 +72,5 @@ public class Estudiante {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
+
 }

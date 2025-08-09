@@ -1,4 +1,4 @@
-package com.tiendatutorplus;
+package com.tiendatutorplus.controller;
 
 import com.tiendatutorplus.model.Materia;
 import org.springframework.stereotype.Controller;

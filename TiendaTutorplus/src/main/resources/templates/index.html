@@ -34,19 +34,19 @@
                     <!-- Botones centrales (compañeros + Jhoel) -->
                     <div class="col-md-4 d-flex justify-content-center">
                         <div class="d-grid gap-2 col-8 mx-auto">
-                            <!-- Compañeros -->
-                            <a th:href="@{/recomendaciones}" class="btn btn-dark btn-lg rounded-pill">Recomendaciones</a>
-                            <a th:href="@{/ayuda}"           class="btn btn-dark btn-lg rounded-pill">Ayuda</a>
-                            <a th:href="@{/blog}"           class="btn btn-dark btn-lg rounded-pill">Blog / Recursos / Consejos</a>
-                            <a th:href="@{/testimonios}" class="btn btn-dark btn-lg rounded-pill">Testimonios</a>
-                            <!-- Jhoel -->
-                            <a th:href="@{/nosotros}"       class="btn btn-dark btn-lg rounded-pill">Quienes Somos</a>
-                            <a th:href="@{/preguntas}"      class="btn btn-dark btn-lg rounded-pill">Preguntas Frecuentes</a>
-                            <a th:href="@{/galeria}"        class="btn btn-dark btn-lg rounded-pill">Galería</a>
+
+                            <a th:href="@{/recomendaciones}" class="btn btn-primary  btn-lg rounded-pill">Recomendaciones</a>
+                            <a th:href="@{/ayuda}"           class="btn btn-primary  btn-lg rounded-pill">Ayuda</a>
+                            <a th:href="@{/blog}"           class="btn btn-primary  btn-lg rounded-pill">Blog / Recursos / Consejos</a>
+                            <a th:href="@{/testimonios}" class="btn btn-primary  btn-lg rounded-pill">Testimonios</a>
+                            <a th:href="@{/nosotros}"       class="btn btn-primary  btn-lg rounded-pill">Quienes Somos</a>
+                            <a th:href="@{/preguntas}"      class="btn btn-primary  btn-lg rounded-pill">Preguntas Frecuentes</a>
+                            <a th:href="@{/galeria}"        class="btn btn-primary  btn-lg rounded-pill">Galería</a>
+                            <a th:href="@{/registro}" class="btn btn-danger btn-lg rounded-pill"  sec:authorize="hasRole('ADMIN')">Registrar</a>
                         </div>
                     </div>
 
-                    <!-- Contáctanos -->
+                    <!-- Contáctanos y Registrar -->
                     <div class="col-md-4">
                         <div class="card p-4 text-center">
                             <h5>Contáctanos</h5>

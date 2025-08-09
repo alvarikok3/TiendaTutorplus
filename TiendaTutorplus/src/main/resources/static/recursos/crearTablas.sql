@@ -93,3 +93,8 @@ USE tutorplus;
 SELECT * FROM tutor;
 SELECT * FROM estudiante;
 SELECT * FROM administradores;
+
+
+-- volver unico los correos de los administradores y los profesores
+ALTER TABLE tutor ADD UNIQUE KEY uk_tutor_correo (correo);
+ALTER TABLE administradores ADD UNIQUE KEY uk_admin_correo (correo);

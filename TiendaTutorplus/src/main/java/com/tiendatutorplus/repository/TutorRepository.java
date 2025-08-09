@@ -1,11 +1,10 @@
 package com.tiendatutorplus.repository;
 
 import com.tiendatutorplus.model.Tutor;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TutorRepository extends JpaRepository<Tutor, Integer> {
+public interface TutorRepository extends JpaRepository<Tutor, Long> {
 
-    Tutor findByCorreoAndContrasena(String correo, String contrasena);
-
-    Tutor findByCorreo(String correo);
+    Optional<Tutor> findByCorreo(String correo);
 }

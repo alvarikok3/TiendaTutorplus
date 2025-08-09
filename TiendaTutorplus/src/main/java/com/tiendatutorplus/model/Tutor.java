@@ -1,16 +1,14 @@
 package com.tiendatutorplus.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "tutor")
 public class Tutor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String nombre;
     private String apellido1;
@@ -19,18 +17,27 @@ public class Tutor {
     private String especialidad;
     private String contrasena;
 
-    // Campos extras para mostrar en destacados
-    private double calificacion;
-    private String imagen;
-    private String descripcion;
-    private String modalidad; // Virtual o Presencial
-    private String nivel;     // Secundaria, Universidad, etc.
+    // Campos NO persistentes (solo para la vista de tutoresdestacados)
+    @Transient
+    private Double calificacion;
 
-    // Constructor vacío obligatorio para JPA
+    @Transient
+    private String imagen;
+
+    @Transient
+    private String descripcion;
+
+    @Transient
+    private String modalidad;
+
+    @Transient
+    private String nivel;
+
     public Tutor() {
+
     }
 
-    // Constructor para controladores de prueba
+    // Constructor para usar en controller "mock" de destacados
     public Tutor(String nombre, String especialidad, double calificacion, String imagen, String descripcion) {
         this.nombre = nombre;
         this.especialidad = especialidad;
@@ -39,12 +46,12 @@ public class Tutor {
         this.descripcion = descripcion;
     }
 
-    // Getters y Setters
-    public int getId() {
+    // ====== Getters/Setters persistentes ======
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -96,11 +103,12 @@ public class Tutor {
         this.contrasena = contrasena;
     }
 
-    public double getCalificacion() {
+    // ====== Getters/Setters NO persistentes ======
+    public Double getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(double calificacion) {
+    public void setCalificacion(Double calificacion) {
         this.calificacion = calificacion;
     }
 
